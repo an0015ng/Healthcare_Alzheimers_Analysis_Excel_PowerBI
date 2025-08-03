@@ -80,11 +80,15 @@ The process confirmed that each row represented a unique subject visit, maintain
 
 **Data Type Optimization**: The imported dataset showed all columns formatted as 'General' type, including numerical measurements that needed proper formatting for calculations and charting:
 
-<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
+<p align="center">
+   <img width="750" height="380" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
+</p>
 
 The data types of all columns were "General", even the ones with decimals. I changed those to "Number" with consistent decimal places by selecting a numerical column (i.e. nWBV) and formatting it as Number type with 3 decimal places. 
 
-<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/482e8a40-756e-498b-8ffd-70752fc1034b" />
+<p align="center">
+   <img width="750" height="380" alt="image" src="https://github.com/user-attachments/assets/482e8a40-756e-498b-8ffd-70752fc1034b" />
+</p>
 
 This is useful for the data type to be continuous so it is better for analysis and charting. I repeated this process for all the numerical columns (eTIV, ASF, MMSE, etc.) to ensure consistency across the dataset.
 
@@ -102,7 +106,9 @@ I wanted to check why it happens, so I did some sorting and filtering, and final
 
 I further confirmed this by drawing a chart with Age at x-axis, and one of the missing columns (I took Educ) as y-axis:
 
-<img width="1122" height="692" alt="image" src="https://github.com/user-attachments/assets/f69e838e-63c6-4850-ae68-2dff423cbf12" />
+<p align="center">
+   <img width="620" height="350" alt="image" src="https://github.com/user-attachments/assets/f69e838e-63c6-4850-ae68-2dff423cbf12" />
+</p>
 
 Now this is not the final chart for the analysis but one can very easily see that subjects with age <40 typically do not have clinical assessment data available.
 
@@ -311,7 +317,9 @@ The resulting table contains the individual MMSE scores organized by CDR status,
 
 **Visualization**: With the individual data points extracted, I created a box and whisker plot to display the full statistical distribution of MMSE scores for each CDR category, showing median values, quartiles, and outliers.
 
-<img width="550" height="480" alt="image" src="https://github.com/user-attachments/assets/dc9592cb-6c07-456a-a585-9f71aa447897" />
+<p align="center">
+   <img width="550" height="480" alt="image" src="https://github.com/user-attachments/assets/dc9592cb-6c07-456a-a585-9f71aa447897" />
+</p>
 
 **Analysis & Insights**: 
 
