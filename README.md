@@ -29,7 +29,7 @@ Understanding neurological risk factors in Alzheimer's disease requires sophisti
 This project leverages **Excel for foundational data preparation** and **Power BI for advanced clinical analytics** - each tool applied where it delivers maximum analytical value:
 
 - **Excel handles**: Data quality validation, feature engineering, demographic categorizations, and baseline statistical insights through PivotTables
-- **Power BI extends**: Multi-dimensional risk assessment, interactive patient profiling, AI-powered pattern recognition, and dynamic clinical dashboards
+- **Power BI extends**: Multi-dimensional risk assessment, interactive patient profiling, and dynamic clinical dashboards
 
 **Workflow**: Raw OASIS Data → Excel Cleaning & Validation → Excel Clinical Logic → Power BI Interactive Risk Assessment → Clinical Recommendations
 
@@ -40,6 +40,7 @@ This integrated approach ensures robust data integrity while delivering clinicia
 **Source**: [Kaggle - MRI and Alzheimer's Dataset](https://www.kaggle.com/datasets/jboysen/mri-and-alzheimers/data)
 
 Below is a screenshot of how the raw dataset looks like:
+
 <img width="1618" height="412" alt="image" src="https://github.com/user-attachments/assets/3396449f-0c37-4269-9915-5b3a0c42a3bf" />
 
 **Original Data Provider**: The [Open Access Series of Imaging Studies (OASIS)](http://www.oasis-brains.org/) - Washington University Alzheimer's Disease Research Center
@@ -52,3 +53,96 @@ This dataset represents real-world clinical research data from one of the most e
 **Assessment Coverage**: MMSE cognitive scores, CDR dementia ratings, socioeconomic factors  
 **Neuroimaging Metrics**: Brain volume measurements (eTIV, nWBV), atlas scaling factors (ASF)  
 **Key Features**: All subjects are right-handed, balanced gender distribution, comprehensive age spectrum from young adults to elderly
+
+# 1. Foundational Analysis in Excel
+
+With a clean understanding of the dataset structure and research objectives, the foundational analysis began in Excel to establish baseline insights and prepare the data for advanced analytics. This phase focused on ensuring data integrity, engineering meaningful features, and creating initial visualizations to understand the core relationships within the OASIS dataset.
+
+## 1.1. Data Quality and Validation
+
+Before conducting any analysis, comprehensive data quality validation was performed to ensure reliable insights. This audit covered duplicate detection, data formatting standardization, missing value investigation, and column utility assessment.
+
+### a. Remove Duplicates in Excel
+
+**Initial Duplicate Assessment**: Verified data integrity by checking for duplicate subject entries that could skew analysis results.
+
+I used Excel's built-in duplicate detection by clicking **Data** → **Remove Duplicates** and selecting all columns to ensure no duplicate subjects existed in the dataset:
+
+<img width="468" height="203" alt="image" src="https://github.com/user-attachments/assets/e9366134-e9b8-4fd4-9577-bfa0fa7ca91a" />
+
+<img width="468" height="178" alt="image" src="https://github.com/user-attachments/assets/9d82e702-8bec-4e6f-aefa-80dcaf5ce92b" />
+
+The process confirmed that each row represented a unique subject visit, maintaining data integrity for subsequent analysis.
+
+### b. Standardize Data Format
+
+**Data Type Optimization**: The imported dataset showed all columns formatted as 'General' type, including numerical measurements that needed proper formatting for calculations and charting:
+
+<img width="468" height="294" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
+
+The data types of all columns were "General", even the ones with decimals. I changed those to "Number" with consistent decimal places by selecting a numerical column (i.e. nWBV) and formatting it as Number type with 3 decimal places. 
+
+<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/482e8a40-756e-498b-8ffd-70752fc1034b" />
+
+This is useful for the data type to be continuous so it is better for analysis and charting. I repeated this process for all the numerical columns (eTIV, ASF, MMSE, etc.) to ensure consistency across the dataset.
+
+### c. Check for Missing/NULL Values
+
+**Missing Data Investigation**: A systematic examination revealed patterns in missing clinical data that required strategic decision-making.
+
+I found out that for some rows, these 4 columns of data are missing: **Educ, SES, MMSE, CDR** while other data are present (neuroimaging measurements like eTIV, nWBV, ASF):
+
+<img width="1826" height="776" alt="image" src="https://github.com/user-attachments/assets/e8158fbe-7fc8-4cd7-9bac-5f800992e13b" />
+
+I wanted to check why it happens, so I did some sorting and filtering, and finally found out that if the subject is young, it typically doesn't have those clinical assessment data. I sorted by age to see if this pattern was true:
+
+<img width="1784" height="720" alt="image" src="https://github.com/user-attachments/assets/37336bff-5d6a-401c-b31c-571ee43442a7" />
+
+I further confirmed this by drawing a chart with Age at x-axis, and one of the missing columns (I took Educ) as y-axis:
+
+<img width="1122" height="692" alt="image" src="https://github.com/user-attachments/assets/f69e838e-63c6-4850-ae68-2dff423cbf12" />
+
+Now this is not the final chart for the analysis but one can very easily see that subjects with age <40 typically do not have clinical assessment data available.
+
+**Strategic Decision**: Yet, there are complete data for **eTIV, nWBV & ASF** even for young subjects. So, instead of deleting the rows altogether, I decided to keep those rows with empty values as they still provide valuable neuroimaging information that might be useful for brain volume analysis across the full age spectrum.
+
+### d. Check for Redundant Columns
+
+**Column Utility Assessment**: Identified columns that provided no analytical value for the research objectives.
+
+In this dataset, everybody is right-handed:
+
+<img width="173" height="216" alt="image" src="https://github.com/user-attachments/assets/8f36588d-bc6e-46c8-9991-b2cf61d696a8" />
+
+Therefore, I removed the 'Hand' column as it contained only a single value ('R') across all subjects and offered no discriminatory power for analysis.
+
+## 1.2. Feature Engineering & Data Preparation
+
+With clean data established, the next critical step involved creating analytical columns that would enable meaningful insights and support the planned PivotTable analysis.
+
+### a. ID Column Restructuring
+
+**Problem**: The original ID column had a complex format 'OAS1_0001_MR1', where 'OAS1' represents this current cross-sectional dataset, '0001' is the actual subject ID, and 'MR1' refers to the first visit. There are 'MR2' entries for some subjects indicating second visits. For analysis purposes, it's better to separate the ID itself and track visit numbers independently.
+
+**Solution**: To get the short ID, I used the formula:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
