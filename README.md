@@ -289,6 +289,36 @@ More significantly, the chart demonstrates a consistent gap between demented and
 
 This pattern provides compelling evidence that dementia involves **pathological brain atrophy** that exceeds normal aging processes. The gap between the two lines represents the additional brain tissue loss associated with dementia-related neurodegeneration. Notably, this difference appears relatively consistent across age groups, suggesting that dementia-related atrophy represents a distinct pathological process rather than simply accelerated normal aging.
 
+### d. Cognitive Score (MMSE) Distribution by Dementia Severity
+
+**Purpose**: To examine the distribution of cognitive test scores across different stages of dementia severity, providing statistical validation of the relationship between clinical assessment scores and diagnostic categories.
+
+**Data Preparation Challenge**: Unlike the previous analyses that could rely on simple aggregations, examining score distributions requires preserving individual data points rather than summarizing them. Therefore, I could not use standard PivotTable aggregation and instead needed to extract the raw MMSE scores for each CDR category to create meaningful statistical visualizations.
+
+**Data Extraction Method**: I created a new table to pull the MMSE data based on CDR values using the FILTER function. For each CDR level, I used the formula:
+
+```excel
+=FILTER(Table2[MMSE], (Table2[CDR]=1) * (Table2[MMSE]<>0))
+```
+
+This formula first checks the rows where CDR equals the specified value (in this example, CDR = 1), then takes the MMSE value provided the MMSE cell is not zero (not blank). I repeated this process for each CDR level (0, 0.5, 1, 2) to create separate columns containing the raw MMSE scores for each dementia severity category:
+
+<img width="1098" height="676" alt="image" src="https://github.com/user-attachments/assets/ed50e69c-b979-417b-99c4-dc1fb45ad772" />
+
+The resulting table contains the individual MMSE scores organized by CDR status, preserving the data distribution needed for statistical analysis rather than losing this information through averaging.
+
+**Visualization**: With the individual data points extracted, I created a box and whisker plot to display the full statistical distribution of MMSE scores for each CDR category, showing median values, quartiles, and outliers.
+
+<img width="1010" height="960" alt="image" src="https://github.com/user-attachments/assets/dc9592cb-6c07-456a-a585-9f71aa447897" />
+
+**Analysis & Insights**: 
+
+The box and whisker plot reveals a clear and progressive inverse relationship between dementia severity (CDR) and cognitive performance (MMSE scores). The statistical distributions for each CDR category are distinctly separate, providing strong visual evidence that as the clinical severity of dementia increases, cognitive function systematically declines. For instance, the median MMSE score for non-demented individuals (CDR = 0) is near the maximum of 30, while the median for those with mild dementia (CDR = 1) drops to approximately 22, and further for moderate dementia (CDR = 2) to around 15.
+
+A closer look at the distributions provides deeper clinical context. The non-demented group (CDR = 0) shows a very tight cluster of high scores, indicating consistent cognitive health. In contrast, the distributions for very mild (CDR = 0.5) and mild (CDR = 1) dementia are noticeably wider, reflecting greater variability in how the disease manifests in its early stages. This suggests that while some individuals experience a sharp drop in cognitive function, others may maintain relatively preserved abilities even after diagnosis, highlighting the heterogeneous nature of early-stage dementia.
+
+This analysis provides robust statistical validation for the clinical tools used in the dataset. The clear, stepwise decline in MMSE scores corresponding to increasing CDR levels confirms that these two metrics work in concert to reliably stage dementia severity. The minimal overlap between the distributions for each category demonstrates that MMSE scores can effectively discriminate between different stages of cognitive impairment, reinforcing the utility of these assessments for both clinical diagnosis and ongoing disease monitoring.
+
 
 
 
