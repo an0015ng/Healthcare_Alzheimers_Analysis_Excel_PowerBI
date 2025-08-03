@@ -68,11 +68,11 @@ Before conducting any analysis, comprehensive data quality validation was perfor
 
 I used Excel's built-in duplicate detection by clicking **Data** → **Remove Duplicates** and selecting all columns to ensure no duplicate subjects existed in the dataset:
 
-<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/e9366134-e9b8-4fd4-9577-bfa0fa7ca91a" />
+<img width="1818" height="806" alt="image" src="https://github.com/user-attachments/assets/d2ccb54a-3105-46fa-a830-0dc3c1de4822" />
 
 After clicking OK:
 
-<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/9d82e702-8bec-4e6f-aefa-80dcaf5ce92b" />
+<img width="1728" height="662" alt="image" src="https://github.com/user-attachments/assets/4010d553-faa9-4956-8c56-86e805dc572d" />
 
 The process confirmed that each row represented a unique subject visit, maintaining data integrity for subsequent analysis.
 
@@ -114,7 +114,7 @@ Now this is not the final chart for the analysis but one can very easily see tha
 
 In this dataset, everybody is right-handed:
 
-<img width="173" height="216" alt="image" src="https://github.com/user-attachments/assets/8f36588d-bc6e-46c8-9991-b2cf61d696a8" />
+<img width="806" height="994" alt="image" src="https://github.com/user-attachments/assets/a53ec0ea-84ba-4713-8023-3b2dd7352822" />
 
 Therefore, I removed the 'Hand' column as it contained only a single value ('R') across all subjects and offered no discriminatory power for analysis.
 
