@@ -107,7 +107,7 @@ I wanted to check why it happens, so I did some sorting and filtering, and final
 I further confirmed this by drawing a chart with Age at x-axis, and one of the missing columns (I took Educ) as y-axis:
 
 <p align="center">
-   <img width="620" height="350" alt="image" src="https://github.com/user-attachments/assets/f69e838e-63c6-4850-ae68-2dff423cbf12" />
+   <img width="550" height="335" alt="image" src="https://github.com/user-attachments/assets/014310ef-6b9f-46da-a274-5bf2cdad8fbd" />
 </p>
 
 Now this is not the final chart for the analysis but one can very easily see that subjects with age <40 typically do not have clinical assessment data available.
