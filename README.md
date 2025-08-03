@@ -218,6 +218,34 @@ Finally, I converted this dataset into a table named `Table2`, useful for analys
 
 <img width="1429" height="566" alt="image" src="https://github.com/user-attachments/assets/ef7b571e-d870-4d0d-94e6-69a3c0cda863" />
 
+## 1.3. Foundational Insights with PivotTables & Charts
+
+With clean, well-structured data established, I moved to creating foundational analytical insights using Excel's PivotTable functionality. This phase focused on establishing the core relationships within the OASIS dataset through four key analyses, each designed to build understanding from basic demographic patterns to more complex clinical relationships.
+
+### a. PivotTable: Demographic & Dementia Overview
+
+**Purpose**: To set the scene by revealing the prevalence of dementia across different age groups and establish the fundamental age-dementia relationship in the dataset.
+
+**PivotTable Setup**:
+- **Rows**: Age_Group (custom categories: 18-40, 41-60, 61-65, 66-70, 71-75, 76-80, 81-85, 86-90, 91-95, 96-100)
+- **Columns**: CDR_Status (Demented, Non-Demented, Unknown)
+- **Values**: Count of Subject ID
+
+I created a PivotTable to aggregate the count of subjects by their dementia status (`CDR_Status`) and age group. The resulting data was then visualized using a 100% stacked column chart to clearly illustrate the rising proportion of demented individuals in older age groups.
+
+<img width="2216" height="504" alt="image" src="https://github.com/user-attachments/assets/f5ed0362-b492-4094-9a48-6035521e1a37" />
+
+**Analysis & Insights**: 
+
+The chart immediately highlights two key characteristics of the dataset. First, for subjects under the age of 60, the data is dominated by 'Non-Demented' and 'Unknown' statuses. The high proportion of 'Unknowns' in the youngest age groups directly reflects the finding from the data validation phase: these younger individuals were often included as healthy controls without undergoing the full clinical dementia assessment. This context is crucial as it focuses the core of the dementia analysis on the older population segments.
+
+Secondly, for the older population where clinical data is complete, the percentage of demented subjects grows dramatically from the 61-65 age group at approximately 30% to a peak of nearly 70% in the 76-80 age group. However, an interesting pattern emerges in the oldest age groups where the dementia percentage appears to decline—dropping from the peak of 70% to around 40% in the 91-95 age group.
+
+This decline in older age groups requires careful interpretation due to **sample size considerations**. The total number of subjects decreases significantly as age increases, making these percentages less statistically reliable. For instance, while the 71-75 age group contains 52 subjects, the 91-95 group has only 5 subjects, making the 40% dementia rate based on just 2 individuals.
+
+More importantly, this pattern may reflect **survivor bias**—a well-documented phenomenon in aging research where individuals who survive to very advanced ages may represent a particularly resilient subset of the population. Those who develop significant health problems, including dementia, may have higher mortality rates and thus be underrepresented in the oldest age categories. This suggests that the subjects reaching ages beyond 85-90 might represent the "healthiest survivors" who were resilient enough to avoid both dementia and other life-threatening conditions.
+
+This initial demographic overview immediately confirms that age is the primary risk factor in this dataset and directs subsequent analysis toward understanding what additional factors might influence dementia risk within these age-stratified populations.
 
 
 
