@@ -258,7 +258,7 @@ This initial demographic overview immediately confirms that age is the primary r
 
 I created a PivotTable to examine how educational achievement relates to dementia prevalence across the dataset. The analysis was visualized using a 100% stacked column chart to clearly illustrate the proportion of demented versus non-demented individuals within each education category.
 
-<img width="946" height="244" alt="image" src="https://github.com/user-attachments/assets/410984f5-3541-47fa-9f88-beaa3c6fa26c" />
+<img width="1800" height="500" alt="image" src="https://github.com/user-attachments/assets/410984f5-3541-47fa-9f88-beaa3c6fa26c" />
 
 **Analysis & Insights**: 
 
@@ -268,7 +268,27 @@ The underlying mechanism behind this protective effect likely relates to the **c
 
 The substantial "Unknown" category across all education levels again reflects the data collection pattern identified during data validation, where younger subjects (who typically have complete educational records but lack clinical dementia assessments) contribute to this category. However, the clear trend among subjects with complete clinical data provides strong evidence for education as a protective factor.
 
-**Additional Clinical Insights**: The gradient nature of this protection suggests that each additional level of education contributes incrementally to cognitive resilience. This finding has important implications for public health policy, suggesting that investments in education may have long-term benefits for brain health and healthcare cost reduction. The data also supports the concept that "use it or lose it" applies to cognitive function, where lifelong mental stimulation through education and potentially continued learning may help maintain cognitive health into advanced age.
+### c. Brain Atrophy Comparison
+
+**Purpose**: To introduce the core neuroimaging finding that demonstrates the biological relationship between dementia and measurable brain volume changes across different age groups.
+
+**PivotTable Setup**:
+- **Rows**: Age_Group (18-40, 41-60, 61-65, 66-70, 71-75, 76-80, 81-85, 86-90, 91-95, 96-100)
+- **Columns**: CDR_Status (Demented, Non-Demented, Unknown)
+- **Values**: Average of nWBV (Normalized Whole Brain Volume)
+
+I created a PivotTable to calculate the average normalized whole brain volume (nWBV) for each age group, segmented by dementia status. The resulting data was visualized using a line chart with age groups on the x-axis and average nWBV on the y-axis, with separate lines for each CDR status to clearly illustrate the brain volume differences between demented and non-demented populations across the aging spectrum.
+
+<img width="1800" height="424" alt="image" src="https://github.com/user-attachments/assets/332b5137-dd02-44fe-8def-7fce516864bd" />
+
+**Analysis & Insights**: 
+
+The line chart reveals two fundamental patterns in brain aging that provide crucial neurobiological evidence for dementia pathology. First, there is a clear age-related decline in average nWBV across all groups, demonstrating that brain volume naturally decreases with advancing age. 
+
+More significantly, the chart demonstrates a consistent gap between demented and non-demented subjects at every comparable age group. Demented individuals consistently show lower average nWBV values compared to their non-demented peers within the same age brackets. For example, in the 71-75 age group, non-demented subjects maintain an average nWBV of approximately 0.755, while demented subjects in the same age range show an average of only 0.730, representing a substantial 3.3% difference in preserved brain tissue.
+
+This pattern provides compelling evidence that dementia involves **pathological brain atrophy** that exceeds normal aging processes. The gap between the two lines represents the additional brain tissue loss associated with dementia-related neurodegeneration. Notably, this difference appears relatively consistent across age groups, suggesting that dementia-related atrophy represents a distinct pathological process rather than simply accelerated normal aging.
+
 
 
 
