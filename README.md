@@ -114,7 +114,7 @@ Now this is not the final chart for the analysis but one can very easily see tha
 
 In this dataset, everybody is right-handed:
 
-<img width="806" height="994" alt="image" src="https://github.com/user-attachments/assets/a53ec0ea-84ba-4713-8023-3b2dd7352822" />
+<img width="512" height="622" alt="image" src="https://github.com/user-attachments/assets/4789041b-230c-4739-8d7b-78d26480f760" />
 
 Therefore, I removed the 'Hand' column as it contained only a single value ('R') across all subjects and offered no discriminatory power for analysis.
 
@@ -128,7 +128,39 @@ With clean data established, the next critical step involved creating analytical
 
 **Solution**: To get the short ID, I used the formula:
 
+```excel
+=TEXTBEFORE(TEXTAFTER(A2,""),"")
+```
 
+First, `TEXTAFTER(A2,"_")` extracts the text after the first underscore, resulting in "0001_MR1". Then, `TEXTBEFORE` from that result gives us just "0001". Perfect.
+
+To get the Visit Number, I used the formula:
+
+```excel
+=SUBSTITUTE(TEXTAFTER(A2,"_",-1),"MR","")
+```
+
+First, `TEXTAFTER(A2,"_",-1)` searches from the end (indicated by '-1'), extracting "MR1". Then, `SUBSTITUTE` replaces "MR" with blank, resulting in just the number "1".
+
+This approach created clean, separate columns for analytical purposes while preserving the original data structure:
+
+<img width="1094" height="724" alt="image" src="https://github.com/user-attachments/assets/dd956a9e-8a14-462c-8ad6-7a0c163df6f7" />
+
+### b. Gender Column Enhancement
+
+**Standardization Issue**: Having M/F abbreviations in the Gender column might be misleading for visualization and reporting purposes.
+
+I renamed the column header to "Gender" for clarity and used Excel's **Find & Replace** function to convert "M" to "Male" and "F" to "Female". I made sure to select "Match case" during the replacement to ensure other cells weren't affected (preventing issues like "MR1" becoming "MaleR1").
+
+### c. Age Group Creation
+
+**Clinical Rationale**: Since Alzheimer's disease occurs more frequently during older age, I created age groups with finer granularity for older subjects while keeping broader categories for younger adults.
+
+I created a strategic age grouping: 2 broad groups for younger subjects (18-40, then 41-60), but 5-year intervals starting from 61 for more precise analysis of the elderly population where dementia risk increases significantly.
+
+In a new 'age_table' sheet, I created a lookup table with age ranges and their corresponding group labels.
+
+Then I added a new "Age_Group" column in the main sheet, using `XLOOKUP` to categorize ages based on the lookup table:
 
 
 
