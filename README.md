@@ -68,9 +68,11 @@ Before conducting any analysis, comprehensive data quality validation was perfor
 
 I used Excel's built-in duplicate detection by clicking **Data** → **Remove Duplicates** and selecting all columns to ensure no duplicate subjects existed in the dataset:
 
-<img width="468" height="203" alt="image" src="https://github.com/user-attachments/assets/e9366134-e9b8-4fd4-9577-bfa0fa7ca91a" />
+<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/e9366134-e9b8-4fd4-9577-bfa0fa7ca91a" />
 
-<img width="468" height="178" alt="image" src="https://github.com/user-attachments/assets/9d82e702-8bec-4e6f-aefa-80dcaf5ce92b" />
+After clicking OK:
+
+<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/9d82e702-8bec-4e6f-aefa-80dcaf5ce92b" />
 
 The process confirmed that each row represented a unique subject visit, maintaining data integrity for subsequent analysis.
 
@@ -78,7 +80,7 @@ The process confirmed that each row represented a unique subject visit, maintain
 
 **Data Type Optimization**: The imported dataset showed all columns formatted as 'General' type, including numerical measurements that needed proper formatting for calculations and charting:
 
-<img width="468" height="294" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
+<img width="1572" height="782" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
 
 The data types of all columns were "General", even the ones with decimals. I changed those to "Number" with consistent decimal places by selecting a numerical column (i.e. nWBV) and formatting it as Number type with 3 decimal places. 
 
