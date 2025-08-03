@@ -142,15 +142,21 @@ To get the Visit Number, I used the formula:
 
 First, `TEXTAFTER(A2,"_",-1)` searches from the end (indicated by '-1'), extracting "MR1". Then, `SUBSTITUTE` replaces "MR" with blank, resulting in just the number "1".
 
-This approach created clean, separate columns for analytical purposes while preserving the original data structure:
+Below is the output:
 
 <img width="1094" height="724" alt="image" src="https://github.com/user-attachments/assets/dd956a9e-8a14-462c-8ad6-7a0c163df6f7" />
+
+This approach created clean, separate columns for analytical purposes while preserving the original data structure:
 
 ### b. Gender Column Enhancement
 
 **Standardization Issue**: Having M/F abbreviations in the Gender column might be misleading for visualization and reporting purposes.
 
-I renamed the column header to "Gender" for clarity and used Excel's **Find & Replace** function to convert "M" to "Male" and "F" to "Female". I made sure to select "Match case" during the replacement to ensure other cells weren't affected (preventing issues like "MR1" becoming "MaleR1").
+I renamed the column header to "Gender" for clarity and used Excel's **Find & Replace** function to convert "M" to "Male" and "F" to "Female":
+
+<img width="1172" height="778" alt="image" src="https://github.com/user-attachments/assets/51040056-e97a-47b2-9351-7ee82daab3d8" />
+
+Also, I made sure to select "Match case" during the replacement to ensure other cells weren't affected (preventing issues like "MR1" becoming "MaleR1").
 
 ### c. Age Group Creation
 
@@ -158,14 +164,55 @@ I renamed the column header to "Gender" for clarity and used Excel's **Find & Re
 
 I created a strategic age grouping: 2 broad groups for younger subjects (18-40, then 41-60), but 5-year intervals starting from 61 for more precise analysis of the elderly population where dementia risk increases significantly.
 
-In a new 'age_table' sheet, I created a lookup table with age ranges and their corresponding group labels.
+In a new 'age_table' sheet, I created a lookup table with age ranges and their corresponding group labels:
+
+<img width="590" height="740" alt="image" src="https://github.com/user-attachments/assets/a0800324-42db-4d5b-b041-e389c2e69f4b" />
 
 Then I added a new "Age_Group" column in the main sheet, using `XLOOKUP` to categorize ages based on the lookup table:
 
+```excel
+=XLOOKUP(C2,Table1[Age_Min],Table1[Age_Group],,-1,1)
+```
 
+The match_mode parameter '-1' refers to 'Exact match or next smaller item'. This is perfect because I used 'Age_Min' in the age_table. For example, if a subject's age is 74, there isn't an exact match, so it looks for the next smaller item which is 71, and returns the Age_Group "71-75".
 
+This is the final output:
 
+<img width="922" height="716" alt="image" src="https://github.com/user-attachments/assets/e1574664-577d-4ae3-a49c-e051701ee3b1" />
 
+### d. Education Level Descriptive Labels
+
+**Enhancement Purpose**: The numerical Educ codes (1-5) needed descriptive labels for better interpretation and visualization.
+
+Based on the OASIS documentation:
+- 1: Less than high school graduate
+- 2: High school graduate  
+- 3: Some college
+- 4: College graduate
+- 5: Beyond college
+
+I created a new column using the `SWITCH` formula:
+
+```excel
+=SWITCH([@Educ], 1,"Less than High School", 2,"High School Graduate", 3,"Some College", 4,"College Graduate", 5,"Post Graduate", "Unknown")
+```
+A new column is created as shown below:
+
+<img width="1392" height="594" alt="image" src="https://github.com/user-attachments/assets/3ea8954a-093a-4760-8be9-bee8fb4b9af1" />
+
+### e. CDR Status Binary Classification
+
+**Clinical Significance**: CDR (Clinical Dementia Rating) is a critical metric to determine if a person is demented or not. Any CDR values above 0 indicate some level of dementia.
+
+I created a new column "CDR_Status" with a simple classification formula:
+
+```excel
+=IFS([@CDR]="", "Unknown", [@CDR]>0, "Demented", [@CDR]=0, "Non-demented")
+```
+
+This classification enables clear comparative analysis between demented and healthy populations while filtering out the unknowns across all other variables in the dataset:
+
+<img width="1108" height="650" alt="image" src="https://github.com/user-attachments/assets/5ec091be-7c95-457c-a6a8-3593b17dd267" />
 
 
 
