@@ -81,13 +81,13 @@ The process confirmed that each row represented a unique subject visit, maintain
 **Data Type Optimization**: The imported dataset showed all columns formatted as 'General' type, including numerical measurements that needed proper formatting for calculations and charting:
 
 <p align="center">
-   <img width="750" height="420" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
+   <img width="702" height="441" alt="image" src="https://github.com/user-attachments/assets/c9418859-711c-4770-b15f-401235fe2d1e" />
 </p>
 
 The data types of all columns were "General", even the ones with decimals. I changed those to "Number" with consistent decimal places by selecting a numerical column (i.e. nWBV) and formatting it as Number type with 3 decimal places. 
 
 <p align="center">
-   <img width="750" height="380" alt="image" src="https://github.com/user-attachments/assets/482e8a40-756e-498b-8ffd-70752fc1034b" />
+   <img width="782" height="389" alt="image" src="https://github.com/user-attachments/assets/6d330c09-18b9-405f-875b-855d828082fb" />
 </p>
 
 This is useful for the data type to be continuous so it is better for analysis and charting. I repeated this process for all the numerical columns (eTIV, ASF, MMSE, etc.) to ensure consistency across the dataset.
