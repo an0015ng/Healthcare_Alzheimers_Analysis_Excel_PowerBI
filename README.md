@@ -303,7 +303,9 @@ This pattern provides compelling evidence that dementia involves **pathological 
 
 This formula first checks the rows where CDR equals the specified value (in this example, CDR = 1), then takes the MMSE value provided the MMSE cell is not zero (not blank). I repeated this process for each CDR level (0, 0.5, 1, 2) to create separate columns containing the raw MMSE scores for each dementia severity category:
 
-<img width="600" height="340" alt="image" src="https://github.com/user-attachments/assets/ed50e69c-b979-417b-99c4-dc1fb45ad772" />
+<p align="center">
+  <img width="600" height="340" alt="image" src="https://github.com/user-attachments/assets/ed50e69c-b979-417b-99c4-dc1fb45ad772" />
+</p>
 
 The resulting table contains the individual MMSE scores organized by CDR status, preserving the data distribution needed for statistical analysis rather than losing this information through averaging.
 
