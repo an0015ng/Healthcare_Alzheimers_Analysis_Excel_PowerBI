@@ -212,9 +212,11 @@ I created a new column "CDR_Status" with a simple classification formula:
 
 This classification enables clear comparative analysis between demented and healthy populations while filtering out the unknowns across all other variables in the dataset:
 
-<img width="1108" height="650" alt="image" src="https://github.com/user-attachments/assets/5ec091be-7c95-457c-a6a8-3593b17dd267" />
+<img width="1172" height="860" alt="image" src="https://github.com/user-attachments/assets/d0def450-d508-4341-a092-9c0aabd24fd2" />
 
+Finally, I converted this dataset into a table named `Table2`, useful for analysis moving forward:
 
+<img width="1429" height="566" alt="image" src="https://github.com/user-attachments/assets/ef7b571e-d870-4d0d-94e6-69a3c0cda863" />
 
 
 
