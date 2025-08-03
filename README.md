@@ -81,7 +81,7 @@ The process confirmed that each row represented a unique subject visit, maintain
 **Data Type Optimization**: The imported dataset showed all columns formatted as 'General' type, including numerical measurements that needed proper formatting for calculations and charting:
 
 <p align="center">
-   <img width="750" height="380" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
+   <img width="750" height="420" alt="image" src="https://github.com/user-attachments/assets/b77f5ed9-5304-4311-9172-49d6268fb5d6" />
 </p>
 
 The data types of all columns were "General", even the ones with decimals. I changed those to "Number" with consistent decimal places by selecting a numerical column (i.e. nWBV) and formatting it as Number type with 3 decimal places. 
