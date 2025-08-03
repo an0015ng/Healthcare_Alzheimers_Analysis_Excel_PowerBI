@@ -120,7 +120,9 @@ Now this is not the final chart for the analysis but one can very easily see tha
 
 In this dataset, everybody is right-handed:
 
-<img width="512" height="622" alt="image" src="https://github.com/user-attachments/assets/4789041b-230c-4739-8d7b-78d26480f760" />
+<p align="center">
+   <img width="512" height="622" alt="image" src="https://github.com/user-attachments/assets/4789041b-230c-4739-8d7b-78d26480f760" />
+</p>
 
 Therefore, I removed the 'Hand' column as it contained only a single value ('R') across all subjects and offered no discriminatory power for analysis.
 
@@ -150,7 +152,9 @@ First, `TEXTAFTER(A2,"_",-1)` searches from the end (indicated by '-1'), extract
 
 Below is the output:
 
-<img width="1094" height="724" alt="image" src="https://github.com/user-attachments/assets/dd956a9e-8a14-462c-8ad6-7a0c163df6f7" />
+<p align="center">
+   <img width="1094/1.5" height="724/1.5" alt="image" src="https://github.com/user-attachments/assets/dd956a9e-8a14-462c-8ad6-7a0c163df6f7" />
+</p>
 
 This approach created clean, separate columns for analytical purposes while preserving the original data structure:
 
