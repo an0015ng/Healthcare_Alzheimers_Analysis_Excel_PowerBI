@@ -153,7 +153,7 @@ First, `TEXTAFTER(A2,"_",-1)` searches from the end (indicated by '-1'), extract
 Below is the output:
 
 <p align="center">
-   <img width="1094/1.5" height="724/1.5" alt="image" src="https://github.com/user-attachments/assets/dd956a9e-8a14-462c-8ad6-7a0c163df6f7" />
+   <img width="547" height="362" alt="image" src="https://github.com/user-attachments/assets/dd956a9e-8a14-462c-8ad6-7a0c163df6f7" />
 </p>
 
 This approach created clean, separate columns for analytical purposes while preserving the original data structure:
