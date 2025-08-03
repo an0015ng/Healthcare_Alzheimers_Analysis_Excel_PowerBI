@@ -222,7 +222,7 @@ Finally, I converted this dataset into a table named `Table2`, useful for analys
 
 With clean, well-structured data established, I moved to creating foundational analytical insights using Excel's PivotTable functionality. This phase focused on establishing the core relationships within the OASIS dataset through four key analyses, each designed to build understanding from basic demographic patterns to more complex clinical relationships.
 
-### a. PivotTable: Demographic & Dementia Overview
+### a. Demographic & Dementia Overview
 
 **Purpose**: To set the scene by revealing the prevalence of dementia across different age groups and establish the fundamental age-dementia relationship in the dataset.
 
@@ -247,6 +247,28 @@ More importantly, this pattern may reflect **survivor bias**: a well-documented 
 
 This initial demographic overview immediately confirms that age is the primary risk factor in this dataset and directs subsequent analysis toward understanding what additional factors might influence dementia risk within these age-stratified populations.
 
+### b. Education's Impact on Cognitive Health
+
+**Purpose**: To investigate the relationship between educational attainment and dementia status, examining whether higher education levels provide protection against cognitive decline.
+
+**PivotTable Setup**:
+- **Rows**: Education_Level (Less than High School, High School Graduate, Some College, College Graduate, Post Graduate, Unknown)
+- **Columns**: CDR_Status (Demented, Non-Demented, Unknown)
+- **Values**: Count of Subject ID
+
+I created a PivotTable to examine how educational achievement relates to dementia prevalence across the dataset. The analysis was visualized using a 100% stacked column chart to clearly illustrate the proportion of demented versus non-demented individuals within each education category.
+
+<img width="946" height="244" alt="image" src="https://github.com/user-attachments/assets/410984f5-3541-47fa-9f88-beaa3c6fa26c" />
+
+**Analysis & Insights**: 
+
+The chart reveals a compelling inverse relationship between educational attainment and dementia risk. As education levels increase from "Less than High School" to "Post Graduate," there is a clear and consistent decrease in the percentage of demented individuals within each group. Specifically, the "Less than High School" category shows approximately 65% demented subjects, while the "Post Graduate" group shows only about 27% demented individuals. This represents a substantial protective effect where higher education appears to reduce dementia risk by more than half.
+
+The underlying mechanism behind this protective effect likely relates to the **cognitive reserve hypothesis**. Higher education involves intensive, structured learning that builds robust neural networks and cognitive flexibility throughout life. This enhanced brain capacity allows individuals to better compensate for age-related neurological changes and pathological processes associated with dementia. Essentially, educated individuals have developed stronger cognitive "muscle" through years of mental exercise, making their brains more resilient to the damaging effects of aging and disease.
+
+The substantial "Unknown" category across all education levels again reflects the data collection pattern identified during data validation, where younger subjects (who typically have complete educational records but lack clinical dementia assessments) contribute to this category. However, the clear trend among subjects with complete clinical data provides strong evidence for education as a protective factor.
+
+**Additional Clinical Insights**: The gradient nature of this protection suggests that each additional level of education contributes incrementally to cognitive resilience. This finding has important implications for public health policy, suggesting that investments in education may have long-term benefits for brain health and healthcare cost reduction. The data also supports the concept that "use it or lose it" applies to cognitive function, where lifelong mental stimulation through education and potentially continued learning may help maintain cognitive health into advanced age.
 
 
 
