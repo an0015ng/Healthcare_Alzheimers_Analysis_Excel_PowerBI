@@ -416,6 +416,49 @@ After these measures were created, they became available in the table for select
 
 **Clinical Utility**: These measures enable dynamic calculations that automatically update based on any applied filters (age groups, gender, education levels), allowing clinicians and researchers to explore how the brain atrophy gap varies across different demographic subgroups. The measures provide immediate quantitative evidence of dementia's impact on brain structure, supporting both diagnostic decisions and patient education about disease progression.
 
+## 2.3. Interactive Dashboard Design & Visualization
+
+**Dashboard Purpose**: With the enhanced data model and calculated measures established, the final step involved creating an interactive dashboard that transforms the analytical insights into a clinical decision support tool. The dashboard needed to showcase the new Risk Level categorization and brain volume differential metrics while enabling dynamic exploration through intuitive filtering and visualization.
+
+**Executive Summary Cards**: At the top of the dashboard, I implemented four key performance indicator cards that provide immediate, high-level insights for clinical stakeholders. These cards display dynamic metrics that automatically update based on any applied filters:
+
+- **Total Subjects**: Shows the count of subjects included in the current filtered view, providing context for the scope of analysis
+- **Average Healthy Brain Volume**: Displays the calculated average nWBV for non-demented subjects using the DAX measure created in section 2.2
+- **Average Demented Brain Volume**: Shows the corresponding average for demented subjects 
+- **Brain Atrophy Gap**: Presents the quantified difference between healthy and demented brain volumes, serving as a key clinical indicator
+
+<p align="center">
+   <img width="612" height="60" alt="image" src="https://github.com/user-attachments/assets/849b6fc9-e29b-4399-b426-854ad5186744" />
+</p>
+
+These top-line metrics can be assessed at first glance, enabling quick decision-making during clinical reviews or administrative meetings.
+
+**Interactive Filter Controls**: The right side of the dashboard features comprehensive slicers that enable dynamic data exploration:
+
+- **Age Group Slicer**: Allows filtering by the custom age brackets created during data preparation
+- **Education Level Slicer**: Enables analysis by educational attainment categories  
+- **Gender Slicer**: Provides gender-based filtering for demographic analysis
+
+<p align="center">
+   <img width="156" height="342" alt="image" src="https://github.com/user-attachments/assets/d4aae704-2910-4d4f-b01a-97e510ca45c0" />
+</p>
+
+These slicers work synergistically, allowing users to explore complex interactions like "How does the brain atrophy gap differ between college-educated women over 70 versus their male counterparts?"
+
+**Risk Level Visualization Strategy**: The core visual components focus on the newly created Risk Level categorization to provide actionable clinical insights:
+
+- **Risk Distribution Donut Chart**: Shows the proportion of subjects in each risk category (Very High Risk, High Risk, Moderate Risk, Low Risk, Unknown)
+- **Brain Volume by Risk Chart**: A bar chart displaying average nWBV across each risk level, demonstrating how brain volume correlates with the composite risk assessment
+
+<p align="center">
+   <img width="468" height="238" alt="image" src="https://github.com/user-attachments/assets/58f46b2a-641a-477c-82d0-fc2cd262f56d" />
+</p>
+
+**Critical Sorting Challenge and Solution**: A significant technical challenge emerged with the Risk Level visualizations. By default, Power BI sorts categorical data alphabetically, which resulted in an illogical order: "High Risk" → "Low Risk" → "Moderate Risk" → "Very High Risk" → "Unknown." This alphabetical sorting completely obscured the meaningful progression from lowest to highest risk, making trend analysis impossible.
+
+**Custom Sorting Implementation**: To resolve this sorting issue, I implemented a sophisticated custom sorting solution using a lookup table approach:
+
+**Step 1: Risk Sorting Table Creation**: I created a new manual table called "Risk Sorting" containing two columns:
 
 
 
