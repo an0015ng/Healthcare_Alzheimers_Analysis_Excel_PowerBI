@@ -450,6 +450,8 @@ These slicers work synergistically, allowing users to explore complex interactio
 - **Risk Distribution Donut Chart**: Shows the proportion of subjects in each risk category (Very High Risk, High Risk, Moderate Risk, Low Risk, Unknown)
 - **Brain Volume by Risk Chart**: A bar chart displaying average nWBV across each risk level. The x-axis includes a **drill-down hierarchy** (Risk Level > Education Level > Age Group) to analyze how brain volume correlates with the composite risk assessment at multiple levels.
 
+Below is the image showing the visuals created:
+
 <p align="center">
    <img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/78cf2557-7c47-4798-af31-e9e6f3e15798" />
 </p>
