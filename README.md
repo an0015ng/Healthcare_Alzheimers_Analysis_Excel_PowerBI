@@ -1,7 +1,7 @@
 # Healthcare MRI & Alzheimers Analysis | Excel & Power BI
 
 ## Executive Summary
-This project conducts an in-depth analysis of the OASIS-1 cross-sectional MRI dataset, encompassing **416 subjects aged 18 to 96**, to identify and visualize key patterns in brain health and cognitive function through advanced Excel and Power BI analytics. Through sophisticated Excel feature engineering including complex **text parsing** (TEXTBEFORE, TEXTAFTER), **dynamic lookup systems** (XLOOKUP with advanced match modes), and **multi-dimensional PivotTable analysis**, combined with Power BI's advanced** DAX measures and custom sorting implementations**, this project transforms complex medical research data into actionable analytical insights that demonstrate the protective effects of education on brain health and quantify measurable neurobiological differences across demographic groups.
+This project conducts an in-depth analysis of the OASIS-1 cross-sectional MRI dataset, encompassing **416 subjects aged 18 to 96**, to identify and visualize key patterns in brain health and cognitive function through advanced Excel and Power BI analytics. Through sophisticated Excel feature engineering including complex **text parsing** (TEXTBEFORE, TEXTAFTER), **dynamic lookup systems** (XLOOKUP with advanced match modes), and **multi-dimensional PivotTable analysis**, combined with Power BI's advanced **DAX measures and custom sorting implementations**, this project transforms complex medical research data into actionable analytical insights that demonstrate the protective effects of education on brain health and quantify measurable neurobiological differences across demographic groups.
 
 ## Table of Contents
 *   [Executive Summary](#executive-summary)
