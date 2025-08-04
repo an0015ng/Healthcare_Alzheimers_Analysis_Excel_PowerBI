@@ -500,6 +500,76 @@ This results in charts being sorted in the intended order:
 
 After refining the formatting, visualizations, and theme, the completed Power BI dashboard is shown at the beginning of this section.
 
+# Key Findings & Clinical Insights
+
+The interactive Power BI dashboard revealed several significant patterns that extend beyond the foundational Excel analysis, providing quantifiable evidence for clinical decision-making and risk stratification strategies. These findings demonstrate the power of dynamic filtering and drill-down capabilities to uncover nuanced relationships that static charts cannot capture.
+
+## 1. Education's Protective Effect Against Brain Atrophy
+
+**Clinical Question Addressed**: For women aged 60-80, how significant is the protective effect of education when comparing the lowest (Less than High School) versus highest (Post Graduate) educational attainment?
+
+**Dynamic Analysis Method**: Using the dashboard's slicer functionality, I isolated women aged 60-80 and compared brain health metrics between the two educational extremes.
+
+Below is the dashboard when "Less than High School" was selected:
+
+<p align="center">
+   <img width="1694" height="944" alt="image" src="https://github.com/user-attachments/assets/db810b20-2c57-41e0-a905-b2434bcfa6f7" />
+</p>
+
+Below is the dashboard when "Post Graduate" was selected:
+
+<p align="center">
+   <img width="2098" height="942" alt="image" src="https://github.com/user-attachments/assets/6e1bef4c-7ee1-4563-9b91-1e60b2a62488" />
+</p>
+
+### Comparative Results:
+
+**Sample Size Validation**: The analysis included comparable cohorts with 11 subjects in the "Less than High School" group and 10 subjects in the "Post Graduate" group, ensuring statistical reliability for the comparison.
+
+
+**Brain Atrophy Gap Analysis**: The most striking finding was the dramatic difference in brain atrophy gap between the two groups. Women with less than high school education showed a brain atrophy gap of 0.04, while post-graduate women demonstrated a gap of only 0.01. This represents a **75% reduction** in the atrophy differential between healthy and demented individuals, providing quantifiable evidence of education's neuroprotective effect.
+
+**Risk Distribution Analysis**: The donut chart revealed substantial differences in risk distribution. Women with less than high school education showed 73% in combined "Very High Risk" and "High Risk" categories with only 27% in "Moderate Risk." In contrast, post-graduate women showed 60% in "High Risk" with a combined 40% in "Moderate Risk" and "Low Risk" categories, indicating a clear shift toward lower risk profiles.
+
+**Brain Volume Preservation**: The average nWBV chart demonstrated consistent brain volume advantages across all risk levels for post-graduate women. The less educated group ranged from 0.69 to 0.77 across risk categories, while post-graduate women maintained volumes from 0.73 to 0.82, representing an obvious and consistent elevation in preserved brain tissue.
+
+**Clinical Implications**: This analysis provides concrete evidence that education functions as a form of cognitive reserve, maintaining brain health even when controlling for age and gender. The data suggests that every additional level of education contributes to measurable neuroprotection, with the highest education levels offering the most significant benefits.
+
+## 2. Multi-Level Drill Down Analysis: Age-Related Brain Volume Decline
+
+**Clinical Question Addressed**: How does brain volume decline with age within specific risk and education categories, and at what point does this decline accelerate most dramatically?
+
+**Interactive Analysis Workflow**: Using the dashboard's hierarchical drill-down functionality, I conducted a systematic exploration starting from the broadest risk categories and progressively narrowing to specific demographic subgroups.
+
+### Analysis Steps and Results:
+
+**Initial Overview (Age 60-96, All Subjects)**: The analysis began with 198 subjects showing a clear upward trend of nWBV across risk levels from "Very High Risk" to "Low Risk," confirming the logical relationship between risk classification and brain volume preservation.
+
+<p align="center">
+   <img width="740" height="404" alt="image" src="https://github.com/user-attachments/assets/c8939662-1403-49d0-9d33-2be76ee6aaee" />
+</p>
+
+**First Drill Down (High Risk by Education Level)**: Drilling down into the "High Risk" category revealed relatively flat brain volumes across education levels, with "Less than High School" showing 0.72 nWBV while other education levels clustered around 0.73. This finding suggests that within already compromised populations, educational protection may be overwhelmed by pathological processes.
+
+<p align="center">
+   <img width="740" height="404" alt="image" src="https://github.com/user-attachments/assets/c8939662-1403-49d0-9d33-2be76ee6aaee" />
+</p>
+
+**Second Drill Down (High School Graduates by Age Group)**: Further drilling into "High School Graduate" subjects revealed a clear age-related decline pattern. Brain volume decreased progressively from 0.74 in the 61-65 age group to 0.71 in the 86-90 age group, demonstrating the inexorable effect of aging on brain structure.
+
+<p align="center">
+   <img width="740" height="404" alt="image" src="https://github.com/user-attachments/assets/c8939662-1403-49d0-9d33-2be76ee6aaee" />
+</p>
+
+**Critical Discovery Using Zoom Functionality**: By utilizing the dashboard's zoom slider to focus on the y-axis range, the analysis revealed that nWBV drops most significantly after age 80. This represents a critical inflection point where normal brain aging may accelerate or where survival bias begins to affect the dataset composition.
+
+<p align="center">
+   <img width="740" height="404" alt="image" src="https://github.com/user-attachments/assets/c8939662-1403-49d0-9d33-2be76ee6aaee" />
+</p>
+
+**Clinical Implications**: This multi-level analysis demonstrates that brain volume decline follows predictable patterns that can be quantified and monitored. The identification of age 80 as a critical threshold provides valuable information for clinicians in developing screening protocols and intervention strategies. The drill-down capability proves essential for isolating specific demographic patterns that would be invisible in aggregate analyses, enabling precision medicine approaches to brain health monitoring.
+
+**Strategic Value**: These findings showcase the dashboard's capability to transform broad population trends into actionable clinical insights. The ability to progressively narrow focus from population-level risk patterns to specific age-education cohorts demonstrates how interactive analytics can support both population health management and individualized patient care strategies.
 
 
 
