@@ -451,7 +451,7 @@ These slicers work synergistically, allowing users to explore complex interactio
 - **Brain Volume by Risk Chart**: A bar chart displaying average nWBV across each risk level, demonstrating how brain volume correlates with the composite risk assessment
 
 <p align="center">
-   <img width="468" height="238" alt="image" src="https://github.com/user-attachments/assets/58f46b2a-641a-477c-82d0-fc2cd262f56d" />
+   <img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/78cf2557-7c47-4798-af31-e9e6f3e15798" />
 </p>
 
 **Critical Sorting Challenge and Solution**: A significant technical challenge emerged with the Risk Level visualizations. By default, Power BI sorts categorical data alphabetically, which resulted in an illogical order: "High Risk" → "Low Risk" → "Moderate Risk" → "Very High Risk" → "Unknown." This alphabetical sorting completely obscured the meaningful progression from lowest to highest risk, making trend analysis impossible.
