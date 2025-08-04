@@ -454,12 +454,47 @@ These slicers work synergistically, allowing users to explore complex interactio
    <img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/78cf2557-7c47-4798-af31-e9e6f3e15798" />
 </p>
 
-**Critical Sorting Challenge and Solution**: A significant technical challenge emerged with the Risk Level visualizations. By default, Power BI sorts categorical data alphabetically, which resulted in an illogical order: "High Risk" → "Low Risk" → "Moderate Risk" → "Very High Risk" → "Unknown." This alphabetical sorting completely obscured the meaningful progression from lowest to highest risk, making trend analysis impossible.
+A **significant technical challenge** emerged with the Risk Level visualizations. By default, Power BI sorts categorical data alphabetically, which resulted in an illogical order: "High Risk" → "Low Risk" → "Moderate Risk" → "Unknown" → "Very High Risk."  This alphabetical sorting completely obscured the meaningful progression from lowest to highest risk, making trend analysis impossible.
 
 **Custom Sorting Implementation**: To resolve this sorting issue, I implemented a sophisticated custom sorting solution using a lookup table approach:
 
-**Step 1: Risk Sorting Table Creation**: I created a new manual table called "Risk Sorting" containing two columns:
+**Step 1: Risk Sorting Table Creation**: I created a new manual table called "Risk Sorting" containing two columns: Risk Level and Risk Sort Order
 
+<p align="center">
+   <img width="1084" height="866" alt="image" src="https://github.com/user-attachments/assets/a72f15f1-41c0-49fc-a40f-735fae5ee38f" />
+</p>
+
+**Step 2: Relationship Establishment**: Using the Model View, I created a relationship between the main Table2 and the Risk Sorting table, connecting them via the Risk Level column. This one-to-many relationship enables the sorting logic to be applied across all visualizations.
+
+<p align="center">
+   <img width="628" height="310" alt="image" src="https://github.com/user-attachments/assets/664c95c6-bd9d-45eb-acbc-a40741ee22e7" />
+</p>
+
+**Step 3: Sort Configuration**: In the Risk Sorting table, I selected the Risk Level column, navigated to Column Tools, and configured "Sort by Column" to use the Risk Sort Order numeric values. This tells Power BI to sort the text values according to the numeric sequence rather than alphabetically.
+
+<p align="center">
+   <img width="715" height="258" alt="image" src="https://github.com/user-attachments/assets/cd177d35-b14c-44ea-a8a5-05c394ae5f67" />
+</p>
+
+**Step 4: Dashboard Implementation**: Finally, when building the dashboard visualizations, instead of using the Risk Level field from Table2, I used the Risk Level field from the Risk Sorting table. This ensures that all charts display risk categories in the logical progression from "Very High Risk" down to "Low Risk," making trends immediately apparent.
+
+<p align="center">
+   <img width="537" height="607" alt="image" src="https://github.com/user-attachments/assets/3b29570c-e212-470f-b59a-816719e278a0" />
+</p>
+
+This results in charts being sorted in the intended order:
+
+<p align="center">
+   <img width="758" height="403" alt="image" src="https://github.com/user-attachments/assets/9a98d773-97b6-45a6-aa27-df5013c59fbc" />
+</p>
+
+**Extended Application**: I applied the same custom sorting technique to the Education Level field, ensuring that educational categories display in logical order from "Less than High School" through "Post Graduate" rather than alphabetical order.
+
+<p align="center">
+   <img width="740" height="404" alt="image" src="https://github.com/user-attachments/assets/c8939662-1403-49d0-9d33-2be76ee6aaee" />
+</p>
+
+**Clinical Impact**: This custom sorting solution transforms the dashboard from a collection of randomly ordered categories into a coherent clinical tool where risk progression and educational attainment are immediately visible and interpretable by healthcare professionals.
 
 
 
