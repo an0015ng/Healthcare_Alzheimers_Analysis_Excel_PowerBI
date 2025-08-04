@@ -1,8 +1,7 @@
 # Healthcare MRI & Alzheimers Analysis | Excel & Power BI
 
 ## Executive Summary
-This project conducts an in-depth analysis of the OASIS-1 cross-sectional MRI dataset, encompassing **416 subjects aged 18 to 96**, to identify and visualize the key risk factors associated with Alzheimer's disease. The analysis reveals that individuals with a college degree or higher have a **35% lower prevalence of dementia** compared to those with only a high school education. Furthermore, neuroimaging data indicates that demented subjects exhibit an average **Normalized Whole Brain Volume (nWBV) that is 15% lower** than their non-demented counterparts within the same age group, highlighting significant brain atrophy as a key biomarker.
-
+This project conducts an in-depth analysis of the OASIS-1 cross-sectional MRI dataset, encompassing **416 subjects aged 18 to 96**, to identify and visualize key patterns in brain health and cognitive function through advanced Excel and Power BI analytics. Through sophisticated Excel feature engineering including complex **text parsing** (TEXTBEFORE, TEXTAFTER), **dynamic lookup systems** (XLOOKUP with advanced match modes), and **multi-dimensional PivotTable analysis**, combined with Power BI's advanced** DAX measures and custom sorting implementations**, this project transforms complex medical research data into actionable analytical insights that demonstrate the protective effects of education on brain health and quantify measurable neurobiological differences across demographic groups.
 
 ## Table of Contents
 *   [Executive Summary](#executive-summary)
@@ -39,7 +38,7 @@ This integrated approach ensures robust data integrity while delivering clinicia
 
 **Source**: [Kaggle - MRI and Alzheimer's Dataset](https://www.kaggle.com/datasets/jboysen/mri-and-alzheimers/data)
 
-Below is a screenshot of how the raw dataset looks like:
+Below is a screenshot of how the raw dataset `oasis_cross-sectional.csv` looks like:
 
 <img width="1618" height="412" alt="image" src="https://github.com/user-attachments/assets/3396449f-0c37-4269-9915-5b3a0c42a3bf" />
 
@@ -574,6 +573,70 @@ Below is the dashboard when "Post Graduate" was selected:
 **Clinical Implications**: This multi-level analysis demonstrates that brain volume decline follows predictable patterns that can be quantified and monitored. The identification of age 80 as a critical threshold provides valuable information for clinicians in developing screening protocols and intervention strategies. The drill-down capability proves essential for isolating specific demographic patterns that would be invisible in aggregate analyses, enabling precision medicine approaches to brain health monitoring.
 
 **Strategic Value**: These findings showcase the dashboard's capability to transform broad population trends into actionable clinical insights. The ability to progressively narrow focus from population-level risk patterns to specific age-education cohorts demonstrates how interactive analytics can support both population health management and individualized patient care strategies.
+
+## Skills Demonstrated
+
+This project showcases advanced proficiency across Excel and Power BI, demonstrating both foundational and sophisticated techniques that reflect mid-level analytical capabilities applied to complex dataset analysis.
+
+### Excel Skills Demonstrated
+
+- **Advanced Text Functions & Data Parsing**: Implemented TEXTBEFORE(), TEXTAFTER(), and SUBSTITUTE() for complex ID restructuring, transforming "OAS1_0001_MR1" format into separate analytical components while preserving data integrity.
+
+- **Dynamic Lookup & Categorization Systems**: Utilized XLOOKUP() with advanced match modes (-1 for "exact match or next smaller item") to create strategic age groupings with variable granularity, demonstrating sophisticated lookup table methodology.
+
+- **Complex Conditional Logic**: Deployed SWITCH() and IFS() functions for multi-level classification systems including education level mapping and binary CDR status determination, showcasing advanced formula construction capabilities.
+
+- **Comprehensive Data Quality Management**: Executed systematic duplicate detection, NULL value analysis, data type optimization, and redundant column identification, ensuring robust data foundation for subsequent analysis.
+
+- **Advanced PivotTable Analytics**: Created multi-dimensional analysis with custom groupings, statistical distributions, and cross-tabulation insights, including specialized data extraction using FILTER() functions for preserving individual data points.
+
+- **Statistical Visualization Mastery**: Constructed box and whisker plots for distribution analysis across categorical variables, demonstrating ability to move beyond standard Excel charting into advanced statistical representation.
+
+### Power BI Skills Demonstrated
+
+- **Advanced DAX Measure Development**: Created interconnected measures using CALCULATE() functions for context-specific aggregations, including "Brain Atrophy Gap" calculations that dynamically update based on applied filters and demographic subgroups.
+
+- **Power Query M Language Implementation**: Implemented complex conditional logic in M language for composite risk scoring, combining multiple data attributes (CDR status, brain volume, age) into hierarchical assessment systems through nested IF statements.
+
+- **Custom Sorting & Data Model Optimization**: Solved Power BI's alphabetical sorting limitations through sophisticated lookup table relationships, creating logical categorical progression for risk levels and education categories using custom sort orders.
+
+- **Interactive Dashboard Architecture**: Designed comprehensive drill-down hierarchies (Risk Level → Education Level → Age Group) with synchronized slicers and cross-visual filtering, enabling dynamic exploration of multi-dimensional relationships.
+
+- **Advanced Visualization Integration**: Seamlessly combined executive KPI cards, donut charts, and hierarchical bar charts with custom formatting, demonstrating mastery of unified design systems and professional presentation standards.
+
+- **Data Relationship Management**: Established complex one-to-many relationships between primary data tables and custom sorting tables, showcasing understanding of data modeling principles and filter context manipulation for accurate calculations.
+
+## Project Files & Access
+
+All project files are readily accessible for technical review and hands-on exploration of the analytical methodologies demonstrated.
+
+### Core Project Files
+
+**Raw Dataset**
+- [oasis_cross-sectional.csv](https://github.com/an0015ng/MRI_Alzheimers_Analysis_Excel_PowerBI/blob/main/oasis_cross-sectional.csv) - Original cross-sectional dataset with 416 subjects and 15 variables
+
+**Excel Analysis Workbook**
+- [MRI Alzheimers Excel Analysis.xlsx](https://github.com/an0015ng/MRI_Alzheimers_Analysis_Excel_PowerBI/blob/main/MRI%20Alzheimers%20Excel%20Analysis.xlsx) - Complete workbook containing data cleaning, feature engineering, PivotTable analyses, and statistical visualizations
+
+**Power BI Dashboard**
+- [MRI Alzheimers Power BI Analysis.pbix](https://github.com/an0015ng/MRI_Alzheimers_Analysis_Excel_PowerBI/blob/main/MRI%20Alzheimers%20Power%20BI%20Analysis.pbix) - Interactive dashboard with advanced DAX measures, custom sorting implementations, and hierarchical drill-down capabilities
+
+### How to Use These Files
+
+1. **Download the raw dataset** to practice data quality assessment and exploration techniques
+2. **Open the Excel workbook** to examine advanced data preparation, feature engineering, and PivotTable methodologies  
+3. **Load the Power BI dashboard** to explore interactive visualizations, DAX measure construction, and custom sorting solutions
+
+All files demonstrate end-to-end analytical workflow from raw data through interactive dashboard creation, suitable for showcasing technical proficiency in data analyst portfolios.
+
+## Conclusion
+
+This project serves as a direct demonstration of advanced proficiency in Excel and Power BI, showcasing a range of sophisticated technical skills. Mastery of Excel is evident in the use of complex text parsing (TEXTBEFORE, TEXTAFTER), dynamic array functions like FILTER() for statistical analysis, and advanced XLOOKUP() with match modes for feature engineering. This technical foundation is extended in Power BI, where proficiency is shown through the development of context-aware DAX measures, the application of Power Query M language for complex conditional scoring, and the creation of custom sorting solutions to overcome platform limitations.
+
+The application of these skills illustrates a comprehensive, end-to-end analytical capability essential for data analyst roles. The workflow methodically transforms a raw dataset by leveraging Excel's strengths in data validation and feature creation before advancing to Power BI for multi-dimensional business intelligence. The creation of interactive dashboards, complete with hierarchical drill-downs and executive-ready visualizations, proves the ability to translate complex data and technical processes into clear, actionable insights, demonstrating a command of the modern data analysis toolkit.
+
+
+
 
 
 
