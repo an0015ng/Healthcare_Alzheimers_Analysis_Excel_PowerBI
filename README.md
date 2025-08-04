@@ -344,6 +344,72 @@ A closer look at the distributions provides deeper clinical context. The non-dem
 This analysis provides robust statistical validation for the clinical tools used in the dataset. The clear, stepwise decline in MMSE scores corresponding to increasing CDR levels confirms that these two metrics work in concert to reliably stage dementia severity. The minimal overlap between the distributions for each category demonstrates that MMSE scores can effectively discriminate between different stages of cognitive impairment, reinforcing the utility of these assessments for both clinical diagnosis and ongoing disease monitoring.
 
 
+# 2. Interactive Deep-Dive in Power BI
+
+Moving beyond the foundational insights established in Excel, the analysis transitioned to Power BI to enable interactive exploration, dynamic filtering, and advanced analytics that would be difficult to achieve with static Excel charts. This phase leveraged Power BI's advanced data modeling capabilities and DAX formula language to create a comprehensive clinical decision support dashboard.
+
+## 2.1. Data Transformation with Power Query
+
+**Data Import Strategy**: I imported the processed dataset that had already undergone cleaning and feature engineering in Excel, ensuring that all the foundational data preparation work was preserved while building upon it with Power BI's advanced capabilities.
+
+**Advanced Risk Stratification**: With the clean dataset imported, I recognized the need for a more sophisticated risk assessment tool that could combine multiple clinical indicators into a single, actionable risk level. This required creating a composite risk score that clinicians could use for quick patient assessment and intervention planning.
+
+**Custom Column Creation**: I added a custom column called "Risk Level" using Power Query to evaluate multiple conditions simultaneously for each subject:
+
+```fs
+= if [CDR] = null then "Unknown"
+else if [CDR] > 0 and [nWBV] < 0.7 and [Age] > 70 then "Very High Risk"
+else if [CDR] > 0 or ([nWBV] < 0.75 and [Age] > 65) then "High Risk"
+else if [Age] > 70 or [nWBV] < 0.8 then "Moderate Risk"
+else "Low Risk"
+```
+
+**Risk Level Logic Explanation**: This formula creates a hierarchical risk assessment system that considers the interaction between clinical dementia status (CDR), brain volume measurements (nWBV), and patient age. The logic prioritizes subjects with confirmed dementia (CDR > 0) combined with significant brain atrophy (nWBV < 0.7) and advanced age (> 70) as "Very High Risk." The formula then systematically evaluates combinations of individual risk factors to assign appropriate risk categories, ensuring that no patient falls through the cracks while avoiding over-classification of low-risk individuals.
+
+Below is the output after the column was created:
+
+<p align="center">
+   <img width="612" height="316" alt="image" src="https://github.com/user-attachments/assets/9b1f3b4f-37ff-43a7-9bd2-b3d4822b4f1e" />
+</p>
+
+## 2.2. Advanced Analytics with DAX Measures
+
+**Clinical Benchmarking Requirement**: To quantify the neurobiological differences between healthy and demented populations, I needed to create measures that could dynamically calculate and compare brain volumes across diagnostic groups. This required leveraging DAX's powerful CALCULATE function to perform context-specific aggregations.
+
+**Brain Volume Differential Analysis**: I developed three interconnected DAX measures to quantify the brain atrophy gap between healthy and demented populations:
+
+**A. Healthy Brain Volume**:
+
+```dax
+Healthy Brain Volume = CALCULATE(AVERAGE(Table2[nWBV]), Table2[CDR] = 0)
+```
+
+This measure calculates the average normalized whole brain volume specifically for subjects with no dementia (CDR = 0), providing the baseline for healthy brain volume preservation in this age-matched population.
+
+**B. Demented Brain Volume**:
+
+```dax
+Demented Brain Volume = CALCULATE(AVERAGE(Table2[nWBV]), Table2[CDR] > 0)
+```
+
+This measure computes the average brain volume for all subjects with any level of dementia (CDR > 0), capturing the average degree of atrophy across the spectrum of cognitive impairment.
+
+**C. Brain Atrophy Gap**:
+
+```dax
+Brain Atrophy Gap = [Healthy Brain Volume] - [Demented Brain Volume]
+```
+
+This composite measure quantifies the actual difference in brain volume between healthy and demented populations, providing a single metric that represents the neurobiological impact of dementia. This gap serves as a key performance indicator for assessing the severity of disease-related brain changes and can be used as a benchmark for evaluating individual patients against population norms.
+
+After these measures were created, they became available in the table for selection:
+
+<p align="center">
+   <img width="637" height="422" alt="image" src="https://github.com/user-attachments/assets/00756d9f-3e74-4e97-a39f-73c895966535" />
+</p>
+
+**Clinical Utility**: These measures enable dynamic calculations that automatically update based on any applied filters (age groups, gender, education levels), allowing clinicians and researchers to explore how the brain atrophy gap varies across different demographic subgroups. The measures provide immediate quantitative evidence of dementia's impact on brain structure, supporting both diagnostic decisions and patient education about disease progression.
+
 
 
 
