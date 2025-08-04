@@ -348,6 +348,12 @@ This analysis provides robust statistical validation for the clinical tools used
 
 Moving beyond the foundational insights established in Excel, the analysis transitioned to Power BI to enable interactive exploration, dynamic filtering, and advanced analytics that would be difficult to achieve with static Excel charts. This phase leveraged Power BI's advanced data modeling capabilities and DAX formula language to create a comprehensive clinical decision support dashboard.
 
+The image below shows how the final dashboard looks like at the end of the project:
+
+<p align="center">
+   <img width="612" height="338" alt="image" src="https://github.com/user-attachments/assets/0eedb1e0-fe1a-410d-8d95-ada8c164c1bb" />
+</p>
+
 ## 2.1. Data Transformation with Power Query
 
 **Data Import Strategy**: I imported the processed dataset that had already undergone cleaning and feature engineering in Excel, ensuring that all the foundational data preparation work was preserved while building upon it with Power BI's advanced capabilities.
