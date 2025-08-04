@@ -496,7 +496,11 @@ This results in charts being sorted in the intended order:
 
 **Clinical Impact**: This custom sorting solution transforms the dashboard from a collection of randomly ordered categories into a coherent clinical tool where risk progression and educational attainment are immediately visible and interpretable by healthcare professionals.
 
+After refining the formatting, visualizations, and theme, here is the completed Power BI dashboard:
 
+<p align="center">
+   <img width="794" height="440" alt="image" src="https://github.com/user-attachments/assets/646d248b-d7d9-4986-a964-77bf4667ddb4" />
+</p>
 
 
 
